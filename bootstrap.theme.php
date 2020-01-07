@@ -8,7 +8,7 @@ return array (
   'url_callback' => '\\Civi\\Core\\Themes\\Resolvers::simple',
   'search_order' =>
   array (
-    0 => 'greenwich',
+    0 => 'bootstrap',
     1 => '_fallback_',
   ),
   'excludes' =>

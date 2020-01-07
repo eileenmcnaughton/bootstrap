@@ -6,7 +6,7 @@ use CRM_Bootstrap_ExtensionUtil as E;
 /**
  * Implements hook_civicrm_config().
  *
- * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_config/ 
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_config/
  */
 function bootstrap_civicrm_config(&$config) {
   _bootstrap_civix_civicrm_config($config);
@@ -168,3 +168,19 @@ function bootstrap_civicrm_navigationMenu(&$menu) {
   ));
   _bootstrap_civix_navigationMenu($menu);
 } // */
+function _bootstrap_isActive() {
+  return Civi::service('themes')->getActiveThemeKey() === 'bootstrap';
+}
+
+/**
+ * Implements hook_civicrm_coreResourceList().
+ ß*/
+function bootstrap_civicrm_coreResourceList(&$items, $region) {
+  if (!_bootstrap_isActive()) {
+    return;
+  }
+  if ($region === 'html-header') {
+    CRM_Core_Resources::singleton()->addStyleFile('bootstrap', 'css/bootstrap.css', -50, 'html-header');
+    CRM_Core_Resources::singleton()->addScriptFile('bootstrap', 'js/bootstrap.js', -50, 'html-header');
+   }
+}

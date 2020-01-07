@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <extension key="bootstrap" type="module">
   <file>bootstrap</file>
-  <name>FIXME</name>
-  <description>FIXME</description>
+  <name>Basic bootstrap</name>
+  <description>Adds in a default bootstrap.css file if this is the chosen theme. Normal Civi theme also loaded.</description>
   <license>AGPL-3.0</license>
   <maintainer>
     <author>eileenmcnaughton</author>
@@ -18,9 +18,9 @@
   <version>1.0</version>
   <develStage>alpha</develStage>
   <compatibility>
-    <ver>5.0</ver>
+    <ver>5.22</ver>
   </compatibility>
-  <comments>This is a new, undeveloped module</comments>
+  <comments>This is mostly intended for development as devs should develop such that things work on a pretty standard bootstrap.</comments>
   <civix>
     <namespace>CRM/Bootstrap</namespace>
   </civix>
